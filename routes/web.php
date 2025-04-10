@@ -5,6 +5,8 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\BelanjaController;
+use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\NavbarController;
 use App\Http\Middleware\IsAdmin;
 
 
@@ -24,8 +26,15 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index']);
+
 Route::get('/belanja', [BelanjaController::class, 'index'])->name('belanja.index');
 Route::get('/belanja/{slug}', [BelanjaController::class, 'show'])->name('belanja.show');
+
+Route::get('keranjang', [KeranjangController::class, 'index'])->name('keranjang.index');
+Route::post('keranjang', [KeranjangController::class, 'store'])->name('keranjang.store');
+Route::delete('keranjang/{id}', [KeranjangController::class, 'delete'])->name('keranjang.delete');
+Route::post('/keranjang/update/{keranjang.index}', [KeranjangController::class, 'updateQuantity'])->name('keranjang.update');
 
 
 Route::middleware(['auth', 'is_admin:1'])->prefix('admin')->name('admin.')->group(function () {

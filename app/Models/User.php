@@ -18,28 +18,18 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'is_admin',
+        'name', 'email', 'password', 'phone', 
+        'province', 'city', 'address', 'postal_code',
+        'avatar', 'bio', 'last_login_at'
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function keranjangs()
+{
+    return $this->hasMany(Keranjang::class);
+}
+
 }

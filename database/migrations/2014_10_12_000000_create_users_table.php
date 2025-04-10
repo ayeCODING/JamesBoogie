@@ -17,11 +17,35 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->boolean('is_admin')->default(0)->nullable();
             $table->rememberToken();
+
+            // Admin flag
+            $table->boolean('is_admin')->default(0)->nullable();;
+
+            // User profile
+            $table->string('phone')->nullable();
+            $table->string('avatar')->nullable();
+            $table->text('bio')->nullable();
+
+            // Shipping information (RajaOngkir)
+            $table->unsignedBigInteger('province_id')->nullable()->comment('ID Provinsi dari RajaOngkir');
+            $table->string('province')->nullable();
+            $table->unsignedBigInteger('city_id')->nullable()->comment('ID Kota/Kabupaten dari RajaOngkir');
+            $table->string('city')->nullable();
+            $table->text('address')->nullable();
+            $table->string('postal_code')->nullable();
+
+            // Login information
+            $table->timestamp('last_login_at')->nullable();
+            $table->string('last_login_ip')->nullable();
+            $table->string('last_login_device')->nullable();
+
+            // Status
+            $table->boolean('is_active')->default(true);
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

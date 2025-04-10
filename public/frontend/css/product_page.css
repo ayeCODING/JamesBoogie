@@ -675,3 +675,9 @@
 .table.sizes tr th {
   white-space: nowrap;
 }
+.prod_pics img {
+    max-width: 400px; /* Sesuaikan ukuran maksimal gambar */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Untuk membuat gambar berada di tengah */
+}

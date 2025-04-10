@@ -22,10 +22,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down()
-{
-    Schema::table('kategoris', function (Blueprint $table) {
-        $table->dropColumn('slug');
-    });
-}
+    public function down(): void
+    {
+        Schema::dropIfExists('kategoris');
+    }
 };

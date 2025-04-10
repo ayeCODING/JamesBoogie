@@ -20,6 +20,11 @@ class EventServiceProvider extends ServiceProvider
         ],
     ];
 
+    // protected $listen = [
+    //     Login::class => [
+    //         LogLastLogin::class,
+    //     ],
+    // ];
     /**
      * Register any events for your application.
      *

@@ -12,14 +12,14 @@
                 <div class="main-menu">
                     <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; font-family: 'Russo One', sans-serif;">
                         <li style="margin: 0 12px; position: relative;">
-                            <a href="{{ url ('welcome')}}" style="color: white; font-size: 16px; text-transform: uppercase; text-decoration: none; position: relative; transition: 0.3s;">
+                            <a href="{{ route ('welcome')}}" style="color: white; font-size: 16px; text-transform: uppercase; text-decoration: none; position: relative; transition: 0.3s;">
                                 Home
                                 <span style="display: block; height: 2px; width: 0%; background: #b0b0b0; position: absolute; bottom: -5px; left: 0; transition: width 0.3s;"></span>
                             </a>
                         </li>
                         <li style="margin: 0 12px; position: relative;">
                             <a href="{{ route('belanja.index') }}" style="color: white; font-size: 16px; text-transform: uppercase; text-decoration: none; position: relative; transition: 0.3s;">
-                                Belanja
+                                Shop
                                 <span style="display: block; height: 2px; width: 0%; background: #b0b0b0; position: absolute; bottom: -5px; left: 0; transition: width 0.3s;"></span>
                             </a>
                         </li>

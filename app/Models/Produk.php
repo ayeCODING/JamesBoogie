@@ -98,4 +98,9 @@ class Produk extends Model
     {
         return $this->hasMany(orderDetail::class, 'produk_id');
     }
+    public function keranjangs()
+{
+    return $this->hasMany(Keranjang::class, 'produk_id', 'produk_id');
+}
+
 }
