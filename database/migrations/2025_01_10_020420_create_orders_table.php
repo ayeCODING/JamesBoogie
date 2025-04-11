@@ -9,19 +9,21 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->id('order_id');
-            $table->unsignedBigInteger('user_id');
-            $table->dateTime('tanggal_pesanan');
-            $table->decimal('total_harga', 10, 2);
-            $table->string('status_pesanan')->default('Menunggu Pembayaran'); // Default status
-            $table->timestamps();
+    public function up()
+{
+    Schema::create('orders', function (Blueprint $table) {
+        $table->id(); // id internal
+        $table->string('order_id')->unique(); //
+        $table->unsignedBigInteger('user_id');
+        $table->integer('total');
+        $table->string('status')->default('pending'); // pending, success, failed
+        $table->json('payload')->nullable(); // simpan respon Midtrans
+        $table->timestamps();
+        
+        $table->foreign('user_id')->references('id')->on('users');
+    });
+}
 
-            $table->foreign('user_id')->references('id')->on('users');
-        });
-    }
 
     /**
      * Reverse the migrations.

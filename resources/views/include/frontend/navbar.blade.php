@@ -98,16 +98,16 @@
             <div class="col-xl-3 col-lg-2 col-md-3">
                 <ul class="top_tools">
                     <li>
-                        {{-- <div class="dropdown dropdown-cart">
+                        <div class="dropdown dropdown-cart">
                             <a href="{{ route('keranjang.index') }}" class="cart_bt position-relative">
-                                @if ($total_keranjang > 0)
+                               
                                     <span class="badge badge-pill badge-danger badge-fade-in"
                                         style="position: absolute; top: -8px; right: -8px; font-size: 12px; padding: 4px 6px;">
-                                        {{ $total_keranjang }}
+                                        
                                     </span>
-                                @endif
+                               
                             </a>
-                        </div> --}}
+                        </div>
                     </li>
                     
                     <li>

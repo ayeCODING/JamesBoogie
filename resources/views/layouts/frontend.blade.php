@@ -50,9 +50,10 @@
 	<!-- /header -->
 
 	@yield('content')
+    @stack('scripts')
 	<!-- /main -->
 
-    @include('include.frontend.footer')
+    {{-- @include('include.frontend.footer') --}}
 	<!--/footer-->
 	</div>
 	<!-- page -->

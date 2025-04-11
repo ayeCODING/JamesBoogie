@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('status_pengiriman')->default('Diproses'); //
             $table->timestamps();
 
-            $table->foreign('order_id')->references('order_id')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders');
 
         });
     }

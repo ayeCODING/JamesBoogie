@@ -24,7 +24,7 @@ return new class extends Migration
             $table->enum('status', ['Tunda', 'Berhasil', 'Gagal'])->default('Tunda');
             $table->timestamps();
 
-            $table->foreign('order_id')->references('order_id')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->foreign('produk_id')->references('produk_id')->on('produks');
         });
     }

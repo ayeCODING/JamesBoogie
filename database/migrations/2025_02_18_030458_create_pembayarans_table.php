@@ -20,7 +20,7 @@ return new class extends Migration
             $table->dateTime('tanggal_transaksi');
             $table->timestamps();
 
-            $table->foreign('order_id')->references('order_id')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders');
         });
     }
 

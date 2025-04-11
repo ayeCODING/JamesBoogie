@@ -31,9 +31,9 @@
                     <h3 data-bs-target="#collapse_3">Contacts</h3>
                 <div class="collapse dont-collapse-sm contacts" id="collapse_3">
                     <ul>
-                        <li><i class="ti-home"></i>97845 Baker st. 567<br>Los Angeles - US</li>
-                        <li><i class="ti-headphone-alt"></i>+94 423-23-221</li>
-                        <li><i class="ti-email"></i><a href="#0">info@allaia.com</a></li>
+                        <li><i class="ti-home"></i>JL.Gambir Suketi, Bandung<br>Indonesia</li>
+                        <li><i class="ti-headphone-alt"></i>+62995392055699</li>
+                        <li><i class="ti-email"></i><a href="#0">jamesboogie.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                 <ul class="additional_links">
                     <li><a href="#0">Terms and conditions</a></li>
                     <li><a href="#0">Privacy</a></li>
-                    <li><span>© 2022 Allaia</span></li>
+                    <li><span>© 2025 James Boogie</span></li>
                 </ul>
             </div>
         </div>

@@ -11,12 +11,8 @@ class Order extends Model
 
     protected $table = 'orders';
 
-    protected $fillable = [
-        'user_id',
-        'tanggal_pesanan',
-        'total_harga',
-        'status_pesanan',
-    ];
+    protected $fillable = ['order_id', 'user_id', 'total', 'status', 'payload'];
+
 
     // Relasi ke tabel users (satu pesanan dimiliki oleh satu pelanggan)
     public function user()

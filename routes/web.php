@@ -8,7 +8,7 @@ use App\Http\Controllers\BelanjaController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\NavbarController;
 use App\Http\Middleware\IsAdmin;
-
+use App\Http\Controllers\MidtransController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,13 +28,24 @@ Route::get('/', function () {
 
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index']);
 
+Route::get('/bayar', [MidtransController::class, 'pay']);
+Route::get('/checkout', [MidtransController::class, 'checkout'])->name('checkout')->middleware('auth');
+Route::post('/midtrans/callback', [MidtransController::class, 'callback']);
+
+Route::get('/payment/success', function () {
+    return view('payment.success');
+})->name('payment.success');
+Route::get('/payment/pending', function () {
+    return view('payment.pending');
+})->name('payment.pending');
+
 Route::get('/belanja', [BelanjaController::class, 'index'])->name('belanja.index');
 Route::get('/belanja/{slug}', [BelanjaController::class, 'show'])->name('belanja.show');
 
-Route::get('keranjang', [KeranjangController::class, 'index'])->name('keranjang.index');
-Route::post('keranjang', [KeranjangController::class, 'store'])->name('keranjang.store');
-Route::delete('keranjang/{id}', [KeranjangController::class, 'delete'])->name('keranjang.delete');
-Route::post('/keranjang/update/{keranjang.index}', [KeranjangController::class, 'updateQuantity'])->name('keranjang.update');
+Route::get('keranjang', [KeranjangController::class, 'index'])->name('keranjang.index')->middleware('auth');
+Route::post('keranjang', [KeranjangController::class, 'store'])->name('keranjang.store')->middleware('auth');
+Route::delete('keranjang/{id}', [KeranjangController::class, 'delete'])->name('keranjang.delete')->middleware('auth');
+Route::post('/keranjang/update/{keranjang.index}', [KeranjangController::class, 'updateQuantity'])->name('keranjang.update')->middleware('auth');
 
 
 Route::middleware(['auth', 'is_admin:1'])->prefix('admin')->name('admin.')->group(function () {
