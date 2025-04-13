@@ -79,7 +79,9 @@ class MidtransController extends Controller
 
     // Tampilkan halaman checkout dengan Snap Token
     return view('checkout', [
-        'snapToken' => $snapToken
+        'snapToken' => $snapToken,
+        'keranjang' => $items,
+        'subtotal' => $total
     ]);
 }
 
